@@ -32,7 +32,7 @@ let func = () => {
     };
     console.log(data);
 
-    $.post('http://127.0.0.1:8000/api/recharge/', data, (data, status) => {
+    $.post('https://zanfiq.herokuapp.com/api/recharge/', data, (data, status) => {
         // let s = $('#s');
         // s.attr('data-order_id', data['order_id']);
         // s.attr('data-amount', data['amount']);
