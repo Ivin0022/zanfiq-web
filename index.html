@@ -24,21 +24,45 @@
         <!-- Brand/logo -->
         <a class="navbar-brand ml-2" href="#">Zanfiq</a>
     </nav>
+    <div class="my-5"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-dark">
+                        <h4 class="card-title text-white mt-2">Mobile Recharge</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="recharge" onsubmit="event.preventDefault(); func();" class="was-validated">
+                            <div class="form-group">
+                                <input class="form-control form-control-lg" type="tel" name="number" pattern="\d{10}"
+                                    placeholder="Enter Mobile Number" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please fill this form with a valid 10 digit phone number.
+                                </div>
+                            </div>
 
-    <form id="recharge" onsubmit="event.preventDefault(); func();">
-        Enter Mobile No: <br>
-        <input type="tel" id="tel" name="number" pattern="\d{10}" placeholder="Enter Mobile Number"
-            required="required" /> <br>
+                            <select class="form-control form-control-lg" id="dropbox" name="opcode" required="required">
+                                <option>Select a operator</option>
+                            </select>
 
+                            <div class="form-group">
+                                <input class="form-control form-control-lg" type="number" name="amount"
+                                    placeholder="Enter amount" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please Enter the amount you want to recharge </div>
+                            </div>
 
-        <select id="dropbox" name="opcode" required="required">
+                            <div class="d-flex justify-content-end m-2">
+                                <input class="btn btn-success" type="submit" value="Recharge">
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
-        </select><br>
-
-        Enter the Recharge Amount: <br>
-        <input type="number" name="amount" placeholder="Enter amount"> <br>
-        <input type="submit" value="Recharge">
-    </form>
+            </div>
+        </div>
+    </div>
 
 
     <!-- jQuery library -->
