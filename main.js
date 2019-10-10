@@ -1,6 +1,9 @@
+const BASE_URL = 'https://zanfiq.herokuapp.com/api/';
+
+
 $(function () {
 
-    $.get("https://zanfiq.herokuapp.com/api/recharge/operaters/", function (data, status) {
+    $.get(BASE_URL + "recharge/operaters/", function (data, status) {
         console.log(data);
         $.each(data, (key, val) => {
             let o = $('<option>');
@@ -15,38 +18,29 @@ $(function () {
 
 
 
-let func = () => {
-    let form = document.getElementById('recharge')
-    let number = form.number.value;
-    let opcode = form.opcode.value;
-    let amount = form.amount.value;
 
-    console.log(number);
-    console.log(opcode);
-    console.log(amount);
+let func = () => {
+    let form = document.getElementById('recharge');
 
     let data = {
-        "number": "+91" + number,
-        "operator": opcode,
-        "amount": amount
+        "number": "+91" + form.number.value,
+        "operator": form.opcode.value,
+        "amount": form.amount.value,
     };
+
     console.log(data);
 
-    $.post('https://zanfiq.herokuapp.com/api/recharge/', data, (data, status) => {
-        // let s = $('#s');
-        // s.attr('data-order_id', data['order_id']);
-        // s.attr('data-amount', data['amount']);
+    $.post(BASE_URL + 'recharge/', data, (data, status) => {
+
         console.log(data);
         console.log(status);
-
-
 
         let options = {
             "key": "rzp_test_rQ4uWtBwVPDKOs",
             "amount": data['amount'],
             "currency": "INR",
-            "name": "Acme Corp",
-            "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
+            "name": "Zanfiq",
+            "description": "A mobile recharge platform",
             "image": "https://example.com/your_logo",
             "order_id": data['order_id'],
             "handler": function (response) {
@@ -61,7 +55,7 @@ let func = () => {
             //     "address": "note value"
             // },
             "theme": {
-                "color": "#F37254"
+                "color": "#000000"
             }
         };
         var rzp1 = new Razorpay(options);
