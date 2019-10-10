@@ -33,7 +33,7 @@
                         <h4 class="card-title text-white mt-2">Mobile Recharge</h4>
                     </div>
                     <div class="card-body">
-                        <form id="recharge" onsubmit="event.preventDefault(); func();" class="was-validated">
+                        <form id="recharge" novalidate onsubmit="event.preventDefault(); func();">
                             <div class="form-group">
                                 <input class="form-control form-control-lg" type="tel" name="number" pattern="\d{10}"
                                     placeholder="Enter Mobile Number" required>
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
 
-                            <select class="form-control form-control-lg" id="dropbox" name="opcode" required="required">
+                            <select class="form-control form-control-lg" id="dropbox" name="opcode" required>
                                 <option>Select a operator</option>
                             </select>
 

@@ -20,6 +20,11 @@ $(function () {
 
 
 let func = () => {
+    if ($('#recharge')[0].checkValidity() === false) {
+        $('#recharge').addClass('was-validated');
+        return
+    }
+
     let form = document.getElementById('recharge');
 
     let data = {
