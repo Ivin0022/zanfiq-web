@@ -47,7 +47,7 @@ let func = () => {
         console.log(status);
 
         let options = {
-            "key": "rzp_test_rQ4uWtBwVPDKOs",
+            "key": "rzp_live_2MyxgoePGGlbP8",
             "amount": data['amount'],
             "currency": "INR",
             "name": "Zanfiq",
