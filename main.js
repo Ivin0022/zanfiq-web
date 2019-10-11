@@ -51,11 +51,9 @@ let func = () => {
             "handler": function (response) {
                 alert(response.razorpay_payment_id);
             },
-            // "prefill": {
-            //     "name": "Gaurav Kumar",
-            //     "email": "gaurav.kumar@example.com",
-            //     "contact": "9999999999"
-            // },
+            "prefill": {
+                "contact": form.number.value
+            },
             // "notes": {
             //     "address": "note value"
             // },
