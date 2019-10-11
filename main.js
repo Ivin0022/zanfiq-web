@@ -63,7 +63,7 @@ let func = () => {
 
                 let recharge_data = { ...recharge_from_data, ...razorpay_data };
 
-                $.post('http://127.0.0.1:8000/api/recharge/payment/success/', recharge_data, (data, status) => {
+                $.post(BASE_URL + 'recharge/payment/success/', recharge_data, (data, status) => {
                     console.log(data);
                 });
             },
