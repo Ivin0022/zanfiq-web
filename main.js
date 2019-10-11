@@ -56,7 +56,7 @@ let func = () => {
             "currency": "INR",
             "name": "Zanfiq",
             "description": "A mobile recharge platform",
-            "image": "https://example.com/your_logo",
+            "image": "https://picsum.photos/200",
             "order_id": data['order_id'],
             "handler": function (response) {
                 alert(response.razorpay_payment_id);
