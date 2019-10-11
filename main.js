@@ -47,12 +47,11 @@ let func = () => {
         console.log(status);
 
         let options = {
-            "key": "rzp_test_rQ4uWtBwVPDKOs",
+            "key": "rzp_live_2MyxgoePGGlbP8",
             "amount": data['amount'],
             "currency": "INR",
             "name": "Zanfiq",
             "description": "A mobile recharge platform",
-            "image": "https://picsum.photos/200",
             "order_id": data['order_id'],
             "handler": function (response) {
                 let razorpay_data = {
@@ -70,12 +69,6 @@ let func = () => {
             "prefill": {
                 "contact": form.number.value,
                 "email": '1@da.com'
-            },
-            // "notes": {
-            //     "address": "note value"
-            // },
-            "theme": {
-                "color": "#000000"
             },
             "modal": {
                 "ondismiss": function () {
