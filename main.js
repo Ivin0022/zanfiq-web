@@ -52,7 +52,6 @@ let func = () => {
             "currency": "INR",
             "name": "Zanfiq",
             "description": "A mobile recharge platform",
-            "image": "https://zanfiq.com/wp-content/uploads/2019/09/xrerggji.png",
             "order_id": data['order_id'],
             "handler": function (response) {
                 let razorpay_data = {
@@ -70,12 +69,6 @@ let func = () => {
             "prefill": {
                 "contact": form.number.value,
                 "email": '1@da.com'
-            },
-            // "notes": {
-            //     "address": "note value"
-            // },
-            "theme": {
-                "color": "#000000"
             },
             "modal": {
                 "ondismiss": function () {
