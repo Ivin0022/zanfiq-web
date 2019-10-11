@@ -26,14 +26,10 @@ let func = () => {
         return
     }
 
-    $("#button").click(function () {
-        // disable button
-        $(this).prop("disabled", true);
-        // add spinner to button
-        $(this).html(
-            `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Recharge..`
-        );
-    });
+    // disable button
+    $('#button').prop("disabled", true);
+    // add spinner to button
+    $('#loading').show();
 
     let form = document.getElementById('recharge');
 
