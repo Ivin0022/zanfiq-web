@@ -5,29 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+
+    <style>
+        .navbar-brand {
+            font-family: 'Kaushan Script', cursive;
+        }
+    </style>
+
     <title>Zanfiq</title>
 </head>
 
 <body>
-    <h1>Zanfiq</h1>
-    <form id="recharge" onsubmit="event.preventDefault(); func();">
-        Enter Mobile No: <br>
-        <input type="tel" id="tel" name="number" pattern="\d{10}" placeholder="Enter Mobile Number"
-            required="required" /> <br>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-2">
+        <!-- Brand/logo -->
+        <a class="navbar-brand ml-2" href="#">Zanfiq</a>
+    </nav>
+    <div class="my-5"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-dark">
+                        <h4 class="card-title text-white mt-2">Mobile Recharge</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="recharge" novalidate onsubmit="event.preventDefault(); func();">
+                            <div class="input-group input-group-lg mb-3">
+                                <div class="input-group-prepend">
+                                    <!-- <button class="btn btn-dark" disabled>&#8377; </button> -->
+                                    <span class="input-group-text">+91</span>
+                                </div>
+                                <input class="form-control form-control-lg" type="tel" name="number" pattern="^\d{10}"
+                                    placeholder="Enter Mobile Number" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please fill this form with a valid 10 digit phone number.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <select class="form-control form-control-lg inactive" id="dropbox" name="opcode"
+                                    required>
+                                    <option value="" selected>Select a operator</option>
+                                </select>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please select a valid option from the list
+                                </div>
+                            </div>
+
+                            <div class="input-group input-group-lg mb-3">
+                                <div class="input-group-prepend">
+                                    <!-- <button class="btn btn-dark" disabled>&#8377; </button> -->
+                                    <span class="input-group-text">&#8377;</span>
+                                </div>
+                                <input class="form-control form-control-lg" type="text" name="amount"
+                                    pattern="^((?!(0))[0-9]+)$" placeholder="Enter amount" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please Enter the amount you want to recharge </div>
+                            </div>
+
+                            <div class="d-flex justify-content-end form-group">
+                                <button class="btn btn-success" type="submit" id="button">
+                                    Recharge
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
-        <select id="dropbox" name="opcode" required="required">
-
-        </select><br>
-
-        Enter the Recharge Amount: <br>
-        <input type="number" name="amount" placeholder="Enter amount"> <br>
-        <input type="submit" value="Recharge">
-    </form>
-
-
+    <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
     <script src="./main.js"></script>
 
 
