@@ -20,10 +20,20 @@ $(function () {
 
 
 let func = () => {
+
     if ($('#recharge')[0].checkValidity() === false) {
         $('#recharge').addClass('was-validated');
         return
     }
+
+    $("#button").click(function () {
+        // disable button
+        $(this).prop("disabled", true);
+        // add spinner to button
+        $(this).html(
+            `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Recharge..`
+        );
+    });
 
     let form = document.getElementById('recharge');
 
