@@ -52,7 +52,7 @@ let func = () => {
             "currency": "INR",
             "name": "Zanfiq",
             "description": "A mobile recharge platform",
-            "image": "https://picsum.photos/200",
+            "image": "https://zanfiq.com/wp-content/uploads/2019/09/xrerggji.png",
             "order_id": data['order_id'],
             "handler": function (response) {
                 let razorpay_data = {
