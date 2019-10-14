@@ -88,6 +88,7 @@
                     </div>
                 </div>
             </div>
+            <!-- recharge forms -->
             <div class="col-md-4">
                 <div class="tab-content">
                     <div class="tab-pane container active" id="mobile">
@@ -147,12 +148,11 @@
                             <div class="card-body">
                                 <form id="dth_recharge" novalidate onsubmit="event.preventDefault(); dth_handler();">
                                     <div class="input-group input-group-lg mb-3">
-                                        <div class="input-group-prepend">
-                                            <!-- <button class="btn btn-dark" disabled>&#8377; </button> -->
+                                        <!-- <div class="input-group-prepend">
                                             <span class="input-group-text">+91</span>
-                                        </div>
+                                        </div> -->
                                         <input class="form-control form-control-lg" type="tel" name="number"
-                                            pattern="^\d{10}" placeholder="Enter your DTH mobile Number " required>
+                                            pattern="^\d*" placeholder="Enter subscriber ID " required>
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill this form with a valid 10 digit phone
                                             number.
