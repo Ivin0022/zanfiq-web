@@ -5,11 +5,14 @@ $(function () {
     $.get(BASE_URL + "recharge/operaters/", function (data, status) {
         console.log(data);
         let mobile = data['mobile'];
+        let dth = data['dth'];
+
         $.each(mobile, (key, val) => {
-            let o = $('<option>');
-            o.html(val)
-            o.val(key)
-            $('#dropbox').append(o);
+            $('#mobile_dropbox').append($('<option>').html(val).val(key));
+        });
+
+        $.each(dth, (key, val) => {
+            $('#dth_dropbox').append($('<option>').html(val).val(key));
         });
 
     });
