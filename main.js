@@ -4,7 +4,8 @@ const BASE_URL = 'https://zanfiq.herokuapp.com/api/';
 $(function () {
     $.get(BASE_URL + "recharge/operaters/", function (data, status) {
         console.log(data);
-        $.each(data, (key, val) => {
+        let mobile = data['mobile'];
+        $.each(mobile, (key, val) => {
             let o = $('<option>');
             o.html(val)
             o.val(key)
