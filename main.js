@@ -47,7 +47,7 @@ let mobile_handler = () => {
     // add spinner to button
     $('#mobile_loading').show();
 
-    let form = document.getElementById('recharge');
+    let form = document.getElementById('mobile_recharge');
 
     let recharge_from_data = {
         "number": "+91" + form.number.value,
