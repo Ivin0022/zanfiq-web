@@ -17,6 +17,19 @@ $(function () {
 });
 
 
+function payment_success_handler(response) {
+    let razorpay_data = {
+        'razorpay_order_id': response.razorpay_order_id,
+        'razorpay_payment_id': response.razorpay_payment_id,
+        'razorpay_signature': response.razorpay_signature,
+    }
+
+    let recharge_data = { ...recharge_from_data, ...razorpay_data };
+
+    $.post(BASE_URL + 'recharge/payment/success/', recharge_data, (data, status) => {
+        console.log(data);
+    });
+}
 
 
 let func = () => {
@@ -54,19 +67,7 @@ let func = () => {
             "name": "Zanfiq",
             "description": "A mobile recharge platform",
             "order_id": data['order_id'],
-            "handler": function (response) {
-                let razorpay_data = {
-                    'razorpay_order_id': response.razorpay_order_id,
-                    'razorpay_payment_id': response.razorpay_payment_id,
-                    'razorpay_signature': response.razorpay_signature,
-                }
-
-                let recharge_data = { ...recharge_from_data, ...razorpay_data };
-
-                $.post(BASE_URL + 'recharge/payment/success/', recharge_data, (data, status) => {
-                    console.log(data);
-                });
-            },
+            "handler": payment_success_handler,
             "prefill": {
                 "contact": form.number.value,
                 "email": '1@da.com'
