@@ -35,17 +35,17 @@ function payment_success_handler(response) {
 }
 
 
-let func = () => {
+let mobile_handler = () => {
 
-    if ($('#recharge')[0].checkValidity() === false) {
-        $('#recharge').addClass('was-validated');
+    if ($('#mobile_recharge')[0].checkValidity() === false) {
+        $('#mobile_recharge').addClass('was-validated');
         return
     }
 
     // disable button
-    $('#button').prop("disabled", true);
+    $('#mobile_button').prop("disabled", true);
     // add spinner to button
-    $('#loading').show();
+    $('#mobile_loading').show();
 
     let form = document.getElementById('recharge');
 
@@ -78,9 +78,64 @@ let func = () => {
             "modal": {
                 "ondismiss": function () {
                     // Enable button
-                    $('#button').prop("disabled", false);
+                    $('#mobile_button').prop("disabled", false);
                     // remove spinner to button
-                    $('#loading').hide();
+                    $('#mobile_loading').hide();
+                }
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+
+    });
+}
+
+let dth_handler = () => {
+
+    if ($('#dth_recharge')[0].checkValidity() === false) {
+        $('#dth_recharge').addClass('was-validated');
+        return
+    }
+
+    // disable button
+    $('#dth_button').prop("disabled", true);
+    // add spinner to button
+    $('#dth_loading').show();
+
+    let form = document.getElementById('dth_recharge');
+
+    let recharge_from_data = {
+        "number": "+91" + form.number.value,
+        "operator": form.opcode.value,
+        "amount": form.amount.value,
+    };
+
+    console.log(recharge_from_data);
+
+    $.post(BASE_URL + 'recharge/', recharge_from_data, (data, status) => {
+
+        console.log(data);
+        console.log('got the order ID');
+        console.log(status);
+
+        let options = {
+            "key": "rzp_live_2MyxgoePGGlbP8",
+            "amount": data['amount'],
+            "currency": "INR",
+            "name": "Zanfiq",
+            "description": "A mobile recharge platform",
+            "order_id": data['order_id'],
+            "handler": payment_success_handler,
+            "prefill": {
+                "contact": form.number.value,
+                "email": '1@da.com'
+            },
+            "modal": {
+                "ondismiss": function () {
+                    // Enable button
+                    $('#dth_button').prop("disabled", false);
+                    // remove spinner to button
+                    $('#dth_loading').hide();
                 }
             }
         };

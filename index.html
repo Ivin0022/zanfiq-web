@@ -93,7 +93,8 @@
                     <div class="tab-pane container active" id="mobile">
                         <div class="card">
                             <div class="card-body">
-                                <form id="recharge" novalidate onsubmit="event.preventDefault(); func();">
+                                <form id="mobile_recharge" novalidate
+                                    onsubmit="event.preventDefault(); mobile_handler();">
                                     <div class="input-group input-group-lg mb-3">
                                         <div class="input-group-prepend">
                                             <!-- <button class="btn btn-dark" disabled>&#8377; </button> -->
@@ -130,9 +131,9 @@
                                     </div>
 
                                     <div class="d-flex justify-content-end form-group">
-                                        <button class="btn btn-success" type="submit" id="button">
-                                            <span class="spinner-border spinner-border-sm" id="loading" role="status"
-                                                aria-hidden="true" style="display: none;"></span>
+                                        <button class="btn btn-success" type="submit" id="mobile_button">
+                                            <span class="spinner-border spinner-border-sm" id="mobile_loading"
+                                                role="status" aria-hidden="true" style="display: none;"></span>
                                             Recharge
                                         </button>
                                     </div>
@@ -140,11 +141,11 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- DTH starts here -->
                     <div class="tab-pane container" id="dth">
                         <div class="card">
                             <div class="card-body">
-                                <form id="recharge" novalidate onsubmit="event.preventDefault(); func();">
+                                <form id="dth_recharge" novalidate onsubmit="event.preventDefault(); dth_handler();">
                                     <div class="input-group input-group-lg mb-3">
                                         <div class="input-group-prepend">
                                             <!-- <button class="btn btn-dark" disabled>&#8377; </button> -->
@@ -181,9 +182,9 @@
                                     </div>
 
                                     <div class="d-flex justify-content-end form-group">
-                                        <button class="btn btn-success" type="submit" id="button">
-                                            <span class="spinner-border spinner-border-sm" id="loading" role="status"
-                                                aria-hidden="true" style="display: none;"></span>
+                                        <button class="btn btn-success" type="submit" id="dth_button">
+                                            <span class="spinner-border spinner-border-sm" id="dth_loading"
+                                                role="status" aria-hidden="true" style="display: none;"></span>
                                             Recharge
                                         </button>
                                     </div>
